@@ -87,6 +87,8 @@ cd D:\Programs\vcpkg
 ### 2.2 设置环境变量
 
 
+@@@@
+
 ```cmd
 :: 必须设置的环境变量
 set DISTUTILS_USE_SDK=1
@@ -105,6 +107,10 @@ set LIB=D:\Programs\vcpkg\installed\x64-windows\lib;%LIB%
 set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 ```
 
+
+@@@@
+
+
 > **为什么不使用普通命令提示符？**
 > 
 > 普通命令提示符没有配置 MSVC 环境变量，编译 C++/CUDA 扩展时会找不到编译器或使用错误的架构（32位 vs 64位）。
@@ -112,6 +118,9 @@ set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 ### 2.3 清理并编译
 
 命令如下：
+
+
+
 
 ```cmd
 cd d:\Project\uranus\vision-0.11.0
@@ -125,8 +134,14 @@ rmdir /s /q *.egg-info
 D:\Project\uranus\SymPointV2\.venv\Scripts\python.exe setup.py install
 ```
 
+
+
+111
+
+
 ### 2.4 验证安装
 
+命令：
 
 ```cmd
 :: 添加 vcpkg DLL 到 PATH（运行 Python 程序前需要）
@@ -135,6 +150,8 @@ set PATH=D:\Programs\vcpkg\installed\x64-windows\bin;%PATH%
 :: 测试
 python -c "import torch; import torchvision; print(torchvision.__version__)"
 ```
+
+命令结束。
 
 
 ## 三、遇到的问题及解决方案
