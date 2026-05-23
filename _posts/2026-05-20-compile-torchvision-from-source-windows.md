@@ -38,7 +38,6 @@ git checkout v0.11.0
 | vcpkg | D:\Programs\vcpkg |
 | 目标平台 | Windows x64 |
 
----
 
 > 下面涉及到比较多的路径，根据自己的实际情况进行调整。
 
@@ -78,7 +77,6 @@ cd D:\Programs\vcpkg
 | CMake | `cmake --version` |
 | vcpkg | `D:\Programs\vcpkg\vcpkg version` |
 
----
 
 ## 二、编译步骤
 
@@ -138,7 +136,6 @@ set PATH=D:\Programs\vcpkg\installed\x64-windows\bin;%PATH%
 python -c "import torch; import torchvision; print(torchvision.__version__)"
 ```
 
----
 
 ## 三、遇到的问题及解决方案
 
@@ -155,7 +152,6 @@ error C2446: '==' : no conversion from 'size_t' to 'int'
 
 **解决方案**：使用 "x64 Native Tools Command Prompt for VS 2019"。
 
----
 
 ### 问题 2: PNG/JPEG 库未检测到
 
@@ -174,7 +170,6 @@ set TORCHVISION_INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include
 set TORCHVISION_LIBRARY=D:\Programs\vcpkg\installed\x64-windows\lib
 ```
 
----
 
 ### 问题 3: image.pyd 加载失败 (WinError 127)
 
@@ -192,7 +187,6 @@ set PATH=D:\Programs\vcpkg\installed\x64-windows\bin;%PATH%
 
 或者将 DLL 复制到 Python 环境或 torchvision 目录。
 
----
 
 ### 问题 4: 多版本 torchvision 冲突
 
@@ -207,7 +201,6 @@ Remove-Item -Recurse -Force "D:\Project\uranus\SymPointV2\.venv\lib\site-package
 Remove-Item -Recurse -Force "D:\Project\uranus\SymPointV2\.venv\lib\site-packages\torchvision-*.egg"
 ```
 
----
 
 ### 问题 5: DISTUTILS_USE_SDK 未设置警告
 
@@ -223,7 +216,6 @@ set DISTUTILS_USE_SDK=1
 set MSSdk=1
 ```
 
----
 
 ## 四、关键环境变量说明
 
@@ -238,7 +230,6 @@ set MSSdk=1
 | `LIB` | 链接器库搜索路径 | 添加 vcpkg lib 目录 |
 | `INCLUDE` | 编译器头文件搜索路径 | 添加 vcpkg include 目录 |
 
----
 
 ## 五、永久配置建议
 
@@ -280,7 +271,6 @@ echo   D:\Project\uranus\SymPointV2\.venv\Scripts\python.exe -c "import torchvis
 pause
 ```
 
----
 
 ## 六、编译产物位置
 
@@ -297,7 +287,6 @@ D:\Project\uranus\SymPointV2\.venv\lib\site-packages\
 │   │   └── datasets\
 ```
 
----
 
 ## 七、常见问题排查
 
@@ -308,7 +297,6 @@ D:\Project\uranus\SymPointV2\.venv\lib\site-packages\
 | DLL 加载失败 | 确认 vcpkg bin 目录在 PATH 中 |
 | 导入报错 | 确认只有一份 torchvision，确认版本正确 |
 
----
 
 ## 八、参考链接
 
