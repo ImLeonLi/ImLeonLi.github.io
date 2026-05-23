@@ -87,9 +87,7 @@ cd D:\Programs\vcpkg
 ### 2.2 设置环境变量
 
 
-@@@@
-
-```cmd
+```
 :: 必须设置的环境变量
 set DISTUTILS_USE_SDK=1
 set MSSdk=1
@@ -108,8 +106,6 @@ set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 ```
 
 
-@@@@
-
 
 > **为什么不使用普通命令提示符？**
 > 
@@ -117,12 +113,8 @@ set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 
 ### 2.3 清理并编译
 
-命令如下：
 
-
-
-
-```cmd
+```
 cd d:\Project\uranus\vision-0.11.0
 
 :: 清理之前的编译产物
@@ -136,14 +128,10 @@ D:\Project\uranus\SymPointV2\.venv\Scripts\python.exe setup.py install
 
 
 
-111
-
-
 ### 2.4 验证安装
 
-命令：
 
-```cmd
+```
 :: 添加 vcpkg DLL 到 PATH（运行 Python 程序前需要）
 set PATH=D:\Programs\vcpkg\installed\x64-windows\bin;%PATH%
 
@@ -151,7 +139,6 @@ set PATH=D:\Programs\vcpkg\installed\x64-windows\bin;%PATH%
 python -c "import torch; import torchvision; print(torchvision.__version__)"
 ```
 
-命令结束。
 
 
 ## 三、遇到的问题及解决方案
@@ -182,7 +169,8 @@ Building torchvision with NVJPEG image support
 **原因**：torchvision setup.py 使用 `libpng-config`（Linux/Mac 工具）或查找 `pngfix`，但 vcpkg 不提供这些。
 
 **解决方案**：手动通过环境变量指定库路径：
-```cmd
+
+```
 set TORCHVISION_INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include
 set TORCHVISION_LIBRARY=D:\Programs\vcpkg\installed\x64-windows\lib
 ```
