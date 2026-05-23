@@ -113,6 +113,7 @@ set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 
 ### 2.3 清理并编译
 
+命令如下：
 
 ```cmd
 cd d:\Project\uranus\vision-0.11.0
