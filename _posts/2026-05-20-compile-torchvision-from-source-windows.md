@@ -88,6 +88,7 @@ cd D:\Programs\vcpkg
 
 ### 2.2 设置环境变量
 
+
 ```cmd
 :: 必须设置的环境变量
 set DISTUTILS_USE_SDK=1
@@ -112,6 +113,7 @@ set INCLUDE=D:\Programs\vcpkg\installed\x64-windows\include;%INCLUDE%
 
 ### 2.3 清理并编译
 
+
 ```cmd
 cd d:\Project\uranus\vision-0.11.0
 
@@ -125,6 +127,7 @@ D:\Project\uranus\SymPointV2\.venv\Scripts\python.exe setup.py install
 ```
 
 ### 2.4 验证安装
+
 
 ```cmd
 :: 添加 vcpkg DLL 到 PATH（运行 Python 程序前需要）
